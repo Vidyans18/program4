@@ -15,8 +15,10 @@ pipeline {
         }
         
         stages ('Run application') { 
-            steps {
-                bat 'python app.py'
+         steps {
+                echo 'Running Python application'
+
+                sh 'python3 largest.py'
             }
         }
     }
