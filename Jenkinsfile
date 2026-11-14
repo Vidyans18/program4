@@ -1,36 +1,39 @@
+
 pipeline {
     agent any
+
     stages {
-        stage ('Checkout') {
+
+        stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-        
-        stage ('Build') {
+
+        stage('Build') {
             steps {
-                echo 'checking Python application'
-                bat 'python -m unittest app'
+                echo 'Checking Python application'
+
+                bat '"C:\\Users\\student\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" --version'
+
+                bat '"C:\\Users\\student\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m unittest app'
             }
         }
-        
 
-    stages {
         stage('Run application') {
             steps {
                 echo 'Hello Jenkins'
 
-                sh 'python3 largest.py'
+                bat '"C:\\Users\\student\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" largest.py'
             }
         }
     }
-}
 
-    
     post {
         success {
             echo 'CI pipeline completed successfully'
         }
+
         failure {
             echo 'CI pipeline failed'
         }
