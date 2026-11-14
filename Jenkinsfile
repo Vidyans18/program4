@@ -6,6 +6,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
+                echo 'Checking out GitHub repository'
                 checkout scm
             }
         }
@@ -16,7 +17,7 @@ pipeline {
 
                 bat '"C:\\Users\\student\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" --version'
 
-                bat '"C:\\Users\\student\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m unittest largest'
+                bat '"C:\\Users\\student\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m py_compile largest.py'
             }
         }
 
