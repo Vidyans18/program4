@@ -14,14 +14,18 @@ pipeline {
             }
         }
         
-        stages ('Run application') { 
-         steps {
-                echo 'Running Python application'
 
-                sh 'python3 app.py'
+    stages {
+        stage('Run application') {
+            steps {
+                echo 'Hello Jenkins'
+
+                sh 'python3 largest.py'
             }
         }
     }
+}
+
     
     post {
         success {
