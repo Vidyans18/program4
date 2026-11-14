@@ -18,7 +18,7 @@ pipeline {
          steps {
                 echo 'Running Python application'
 
-                sh 'python3 largest.py'
+                sh 'python3 app.py'
             }
         }
     }
